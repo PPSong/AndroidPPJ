@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_enter"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.penn.ppj.a.activities.EnterActivity">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/gl_h"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".33" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/gl_v1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".25" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/gl_v2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".75" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v4.view.ViewPager>
+
+    <Button
+        android:id="@+id/bt_login"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="LOGIN"
+        app:layout_constraintBottom_toBottomOf="@+id/gl_h"
+        app:layout_constraintLeft_toLeftOf="@id/gl_v1"
+        app:layout_constraintRight_toLeftOf="@id/gl_v1" />
+
+    <Button
+        android:id="@+id/bt_sign_up"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="SIGNUP"
+        app:layout_constraintBottom_toBottomOf="@+id/gl_h"
+        app:layout_constraintLeft_toLeftOf="@id/gl_v2"
+        app:layout_constraintRight_toLeftOf="@id/gl_v2" />
+
+</android.support.constraint.ConstraintLayout>
