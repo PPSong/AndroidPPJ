@@ -1,28 +1,25 @@
 package com.penn.ppj.activities;
 
-import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.penn.ppj.R;
 import com.penn.ppj.fragments.LoginFragment;
 import com.penn.ppj.fragments.SignUpFragment;
+import com.penn.ppj.utils.CustomViewPager;
 
 public class EnterActivity extends AppCompatActivity {
 
     private SectionsPagerAdapter spAdapter;
+    private CustomViewPager cViewPager;
 
     private Button btnLogin;
     private Button btnSignUp;
-
-    private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,24 +28,25 @@ public class EnterActivity extends AppCompatActivity {
 
         spAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
-        mViewPager = (ViewPager) findViewById(R.id.vp);
-        mViewPager.setAdapter(spAdapter);
+        cViewPager = (CustomViewPager) findViewById(R.id.vp);
+        cViewPager.setAdapter(spAdapter);
+        cViewPager.setSwipeable(false);
 
 
-        btnLogin = (Button) findViewById(R.id.bt_login);
-        btnSignUp = (Button) findViewById(R.id.bt_sign_up);
+        btnLogin = (Button) findViewById(R.id.bt_go_login);
+        btnSignUp = (Button) findViewById(R.id.bt_go_sign_up);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mViewPager.setCurrentItem(0, true);
+                cViewPager.setCurrentItem(0, true);
             }
         });
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mViewPager.setCurrentItem(1, true);
+                cViewPager.setCurrentItem(1, true);
             }
         });
     }

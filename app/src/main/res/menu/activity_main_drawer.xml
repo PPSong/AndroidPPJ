@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/mn_moments"
+            android:icon="@drawable/mymoment"
+            android:title="Moments" />
+        <item
+            android:id="@+id/mn_nearby"
+            android:icon="@drawable/nearby"
+            android:title="Nearby" />
+        <item
+            android:id="@+id/mn_ppActivities"
+            android:icon="@drawable/notice"
+            android:title="Activities" />
+    </group>
+
+    <item android:title="Logout">
+        <menu>
+            <item
+                android:id="@+id/mn_logout"
+                android:icon="@drawable/logout"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+</menu>

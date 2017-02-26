@@ -5,7 +5,7 @@
     android:id="@+id/activity_enter"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.penn.ppj.a.activities.EnterActivity">
+    tools:context="com.penn.ppj.activities.EnterActivity">
 
     <android.support.constraint.Guideline
         android:id="@+id/gl_h"
@@ -28,28 +28,30 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent=".75" />
 
-    <android.support.v4.view.ViewPager
+    <com.penn.ppj.utils.CustomViewPager
         android:id="@+id/vp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </android.support.v4.view.ViewPager>
+    </com.penn.ppj.utils.CustomViewPager>
 
     <Button
-        android:id="@+id/bt_login"
+        android:id="@+id/bt_go_login"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:text="LOGIN"
         app:layout_constraintBottom_toBottomOf="@+id/gl_h"
+        app:layout_constraintTop_toBottomOf="@id/gl_h"
         app:layout_constraintLeft_toLeftOf="@id/gl_v1"
         app:layout_constraintRight_toLeftOf="@id/gl_v1" />
 
     <Button
-        android:id="@+id/bt_sign_up"
+        android:id="@+id/bt_go_sign_up"
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:text="SIGNUP"
+        android:text="SIGN UP"
         app:layout_constraintBottom_toBottomOf="@+id/gl_h"
+        app:layout_constraintTop_toBottomOf="@id/gl_h"
         app:layout_constraintLeft_toLeftOf="@id/gl_v2"
         app:layout_constraintRight_toLeftOf="@id/gl_v2" />
 
