@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_new_moment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.penn.ppj.activities.NewMomentActivity">
+
+    <EditText
+        android:id="@+id/et_moment_content"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/lo_preview_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:flexWrap="wrap">
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_choose_location_logo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/location"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_moment_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@+id/iv_choose_location_logo"
+            app:layout_constraintRight_toLeftOf="@+id/iv_choose_location_error"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_choose_location_error"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/errorinfo"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:flexWrap="wrap">
+
+        <Button
+            android:id="@+id/bt_tag_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            android:padding="10dp"
+            android:text="BURGERS" />
+
+        <Button
+            android:id="@+id/bt_tag_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            android:padding="10dp"
+            android:text="SOUP" />
+
+        <Button
+            android:id="@+id/bt_tag_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            android:padding="10dp"
+            android:text="FASHION" />
+
+        <Button
+            android:id="@+id/bt_tag_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            android:padding="10dp"
+            android:text="SPORT" />
+
+        <Button
+            android:id="@+id/bt_tag_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            android:padding="10dp"
+            android:text="POLITICS" />
+
+        <Button
+            android:id="@+id/bt_tag_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            android:padding="10dp"
+            android:text="ART" />
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <Button
+        android:id="@+id/bt_moment_publish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Publish" />
+
+</LinearLayout>
