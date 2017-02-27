@@ -28,10 +28,8 @@ public class MomentOverview {
 
     public MomentOverview(MomentCreated mc, User user) {
         author = user;
-        images = new ArrayList<String>();
-        for (PPImage item : mc.ppImages) {
-            images.add(item.localPath);
-        }
+        images = mc.getImagePathArrayList();
+
         placeName = mc.placeName;
         loc = mc.loc;
         content = mc.content;

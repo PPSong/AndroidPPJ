@@ -22,6 +22,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Observable;
 
+import static com.amap.api.col.x.i;
+
 /**
  * Created by penn on 24/02/2017.
  */
@@ -49,6 +51,15 @@ public class PPData extends Observable {
 
     public static PPData getInstance() {
         return ourInstance;
+    }
+
+    public void resumeLocalMomentsUpload() {
+        for (MomentCreated item: localMoments) {
+            if (item.getStatus() != "failed") {
+                //包含local, uploading
+                item.upload();
+            }
+        }
     }
 
     public int getTotalMomentsCount() {
@@ -133,35 +144,15 @@ public class PPData extends Observable {
         return localMoments;
     }
 
-    private void setDefaultsLocalMoments() {
+    public void setDefaultsLocalMoments() {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = prefs.edit();
         Gson gson = new Gson();
         Type listType = new TypeToken<ArrayList<MomentCreated>>(){}.getType();
-
-//        public MomentCreated(String authorUsername, String placeName, Loc loc, String content, String tag, ArrayList<String> imagePaths) {
-//            this.authorUsername = authorUsername;
-//            this.placeName = placeName;
-//            this.loc = loc;
-//            this.content = content;
-//            this.tag = tag;
-//            this.createdTime = System.currentTimeMillis();
-//            this.ppImages = PPImage.getPPImage(this, imagePaths);
-//            this.status = "local";
-//        }
-
-//        ArrayList<String> t = new ArrayList<String>();
-//        t.add("i1");
-//        t.add("i2");
-//        MomentCreated testMc = new MomentCreated("tu1", "tp1", new Loc(31.0, 121.0), "tc1", "ttag1", t);
-//
-//        ArrayList<MomentCreated> mcl = new ArrayList<MomentCreated>();
-//        mcl.add(testMc);
-
-        //String json = gson.toJson(testMc, Test.class);
-        //Log.d("P", json);
-//        editor.putString(user.getUsername() + "_LOCAL_MOMENTS", json);
-//        editor.commit();
+        String json = gson.toJson(localMoments, listType);
+        Log.d("P", json);
+        editor.putString(user.getUsername() + "_LOCAL_MOMENTS", json);
+        editor.commit();
     }
 
     private void setTotalMoments() {

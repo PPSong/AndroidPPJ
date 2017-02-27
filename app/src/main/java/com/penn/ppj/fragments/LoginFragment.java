@@ -171,6 +171,9 @@ public class LoginFragment extends Fragment {
 
         ppData.setNetMoments(netMoments);
 
+        //把原来uploading中的moment重新上传(这部分是由于程序强退造成没传完的)
+        ppData.getInstance().resumeLocalMomentsUpload();
+
         Class destinationActivity = MainActivity.class;
         Intent it = new Intent(getContext(), destinationActivity);
 
